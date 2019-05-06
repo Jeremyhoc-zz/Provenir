@@ -1,9 +1,10 @@
 node('JHNode') {
   stage('GitSCM') {
-    
+    git credentialsId: 'ebcd83c9-6fe3-462e-895a-bf2e3aa31f4c', url: 'git@github.com:ProvenirCore/jenkinsfile.git'
   }
   
-  stage('Backup AMI') {
-    
+  stage('Run Backup AMI') {
+    sh 'chmod -R +x ./'
+    sh 'python ./python/backup_ami ${EC2_NAME} ${EC2_ID} ${AWS_Region}'
   }
 }

@@ -5,6 +5,6 @@ node('JHNode') {
   
   stage('Run Backup AMI') {
     sh 'chmod -R +x ./'
-    sh 'python ./python/backup_ami ${EC2_NAME} ${EC2_ID} ${AWS_Region}'
+    sh 'python ./python/backup_ami.py ${EC2_NAME} ${EC2_ID} ${AWS_Region}'
   }
 }

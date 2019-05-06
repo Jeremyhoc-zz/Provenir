@@ -1,0 +1,9 @@
+node('JHNode') {
+  stage('GitSCM') {
+    
+  }
+  
+  stage('Backup AMI') {
+    
+  }
+}
